@@ -2,7 +2,6 @@
 var router = require('./router.js');
 const http = require('http');
 
-const hostname = 'Localhost';
 const port = process.env.PORT || 3000;
 
 const server = http.createServer((request, response) => {
@@ -10,7 +9,7 @@ const server = http.createServer((request, response) => {
   router.user(request, response);
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+server.listen(port, () => {
+  console.log(`Server running at port ` + port);
 });
 
